@@ -107,7 +107,7 @@ const Game = {
 		Game.elements.statusValue.innerText = Game.cache.highscore;
 	},
 	loadHighscore: function () {
-		const gameCache = localStorage.getItem('suika-game-cache');
+		const gameCache = localStorage.getItem('mooncat-merge-cache');
 		if (gameCache === null) {
 			Game.saveHighscore();
 			return;
@@ -122,9 +122,9 @@ const Game = {
 
 		Game.cache.highscore = Game.score;
 		Game.showHighscore();
-		Game.elements.endTitle.innerText = 'New Highscore!';
+		Game.elements.endTitle.innerText = '新紀錄！';
 
-		localStorage.setItem('suika-game-cache', JSON.stringify(Game.cache));
+		localStorage.setItem('mooncat-merge-cache', JSON.stringify(Game.cache));
 	},
 
 	initGame: function () {
@@ -157,7 +157,7 @@ const Game = {
 		Composite.add(engine.world, gameStatics);
 
 		Game.calculateScore();
-		Game.elements.endTitle.innerText = 'Game Over!';
+		Game.elements.endTitle.innerText = '遊戲結束！';
 		Game.elements.ui.style.display = 'block';
 		Game.elements.end.style.display = 'none';
 		Game.elements.previewBall = Game.generateFruitBody(Game.width / 2, previewBallHeight, 0, { isStatic: true });

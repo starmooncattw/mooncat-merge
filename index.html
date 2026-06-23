@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>星月喵滑倒遊戲</title>
+  <meta name="description" content="可愛貓咪合體遊戲！喵→總→宇→宙→天→下→無→敵，挑戰合成最終形態！支援電腦與手機遊玩。">
+  <link rel="icon" type="image/png" href="./assets/img/circle0.png">
   <meta property="og:title" content="星月喵滑倒遊戲" />
+  <meta property="og:description" content="可愛貓咪合體遊戲！喵→總→宇→宙→天→下→無→敵，挑戰合成最終形態！" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://starmooncattw.github.io/mooncat-merge/" />
+  <meta property="og:image" content="https://starmooncattw.github.io/mooncat-merge/assets/img/circle0.png" />
   <style>
-    @import url(https://fonts.bunny.net/css?family=azeret-mono:400,700,900);
+    @import url(https://fonts.bunny.net/css?family=azeret-mono:400,700,900&display=swap);
 
     :root {
       --col-bg: #FFD59D;
@@ -39,7 +45,7 @@
       padding: 16px;
       height: 100vh;
       height: 100dvh;
-      padding-bottom: 70px;
+      padding-bottom: 80px;
     }
 
     #legend {
@@ -126,6 +132,10 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+    }
+
+    #mobile-legend-btn {
+      display: none;
     }
 
     #restart-btn:hover, #mobile-legend-btn:hover {
@@ -332,8 +342,8 @@
 
         <div id="game-end-container">
           <div id="game-end">
-            <div id="game-end-title">Game Over!</div>
-            <a id="game-end-link" href="">Try Again</a>
+            <div id="game-end-title">遊戲結束！</div>
+            <a id="game-end-link" href="">再玩一次</a>
           </div>
         </div>
 
@@ -350,8 +360,8 @@
     <div id="status-highscore">最高分：<span id="highscore-value">0</span></div>
     <div id="status-next">下一個：<span id="next-text">－</span></div>
     <div id="status-buttons">
-      <button id="mobile-legend-btn">📋</button>
-      <button id="restart-btn">🔄</button>
+      <button id="mobile-legend-btn" aria-label="查看等級">📋</button>
+      <button id="restart-btn" aria-label="重新開始">🔄</button>
     </div>
   </div>
   <div id="mobile-legend-overlay">

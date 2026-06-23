@@ -1,9 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git clone *)",
-      "Read(//tmp/**)",
-      "WebFetch(domain:raw.githubusercontent.com)"
-    ]
+      "WebFetch(domain:github.com)",
+      "WebSearch"
+    ],
+    "deny": [],
+    "ask": []
   }
 }

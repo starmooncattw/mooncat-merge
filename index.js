@@ -43,8 +43,14 @@ const Game = {
 		score: document.getElementById('game-score'),
 		end: document.getElementById('game-end-container'),
 		endTitle: document.getElementById('game-end-title'),
-		statusValue: document.getElementById('legend-highscore-value'),
-		legendNextText: document.getElementById('legend-next-text'),
+		statusValue: document.getElementById('highscore-value'),
+		legendNextText: document.getElementById('next-text'),
+		legendItems: document.getElementById('legend-items'),
+		mobileLegendBtn: document.getElementById('mobile-legend-btn'),
+		mobileLegendOverlay: document.getElementById('mobile-legend-overlay'),
+		mobileLegendContent: document.getElementById('mobile-legend-content'),
+		mobileLegendClose: document.getElementById('mobile-legend-close'),
+		restartBtn: document.getElementById('restart-btn'),
 		previewBall: null,
 	},
 	cache: { highscore: 0 },
@@ -94,7 +100,7 @@ const Game = {
 	setNextFruitSize: function () {
 		Game.nextFruitSize = Math.floor(rand() * 5);
 		const name = Game.fruitNames[Game.nextFruitSize];
-		Game.elements.legendNextText.innerText = `${name} ${Game.nextFruitSize + 1}`;
+		Game.elements.legendNextText.innerText = `${name} (等級${Game.nextFruitSize + 1})`;
 	},
 
 	showHighscore: function () {
@@ -371,12 +377,37 @@ const mouseConstraint = MouseConstraint.create(engine, {
 render.mouse = mouse;
 
 Game.buildLegend = function () {
-	const legend = document.getElementById('legend');
-	Game.fruitSizes.forEach(function (size, i) {
-		const row = document.createElement('div');
-		row.className = 'legend-row';
-		row.innerHTML = `<span>${Game.fruitNames[i]}</span><b>${i + 1}</b>`;
-		legend.appendChild(row);
+	const buildItems = (container) => {
+		container.innerHTML = '';
+		Game.fruitSizes.forEach(function (size, i) {
+			const row = document.createElement('div');
+			row.className = 'legend-row';
+			row.innerHTML = `<span>${Game.fruitNames[i]}</span><b>${i + 1}</b>`;
+			container.appendChild(row);
+		});
+	};
+
+	buildItems(Game.elements.legendItems);
+	buildItems(Game.elements.mobileLegendContent);
+
+	// 手機版按鈕事件
+	Game.elements.mobileLegendBtn.addEventListener('click', function() {
+		Game.elements.mobileLegendOverlay.classList.add('active');
+	});
+
+	Game.elements.mobileLegendClose.addEventListener('click', function() {
+		Game.elements.mobileLegendOverlay.classList.remove('active');
+	});
+
+	Game.elements.mobileLegendOverlay.addEventListener('click', function(e) {
+		if (e.target === Game.elements.mobileLegendOverlay) {
+			Game.elements.mobileLegendOverlay.classList.remove('active');
+		}
+	});
+
+	// 重新開始按鈕
+	Game.elements.restartBtn.addEventListener('click', function() {
+		location.reload();
 	});
 };
 

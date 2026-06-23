@@ -1,6 +1,6 @@
-# 🐱 星月貓滑倒遊戲
+# 🐱 貓咪合體遊戲
 
-基於 [moonfloof/suika-game](https://github.com/moonfloof/suika-game) 修改的星月貓滑倒遊戲，使用 Matter.js 物理引擎打造。
+基於 [moonfloof/suika-game](https://github.com/moonfloof/suika-game) 修改的貓咪版合體遊戲，使用 Matter.js 物理引擎打造。
 
 > 專案起源：看到 [這則貼文](https://x.com/i/status/2066760278558302679) 產生的後續創作
 

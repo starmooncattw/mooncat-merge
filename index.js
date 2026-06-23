@@ -100,7 +100,7 @@ const Game = {
 	setNextFruitSize: function () {
 		Game.nextFruitSize = Math.floor(rand() * 5);
 		const name = Game.fruitNames[Game.nextFruitSize];
-		Game.elements.legendNextText.innerText = `${name} ${Game.nextFruitSize + 1}`;
+		Game.elements.legendNextText.innerText = `${name} (等級${Game.nextFruitSize + 1})`;
 	},
 
 	showHighscore: function () {

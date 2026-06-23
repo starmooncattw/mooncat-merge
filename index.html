@@ -107,7 +107,13 @@
       font-size: 18px;
     }
 
-    #restart-btn {
+    #status-buttons {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    #restart-btn, #mobile-legend-btn {
       background-color: var(--col-primary);
       color: white;
       border: none;
@@ -122,25 +128,8 @@
       flex-shrink: 0;
     }
 
-    #restart-btn:hover {
+    #restart-btn:hover, #mobile-legend-btn:hover {
       background-color: var(--col-primary-dark);
-    }
-
-    #mobile-legend-btn {
-      display: none;
-      position: fixed;
-      top: 16px;
-      right: 16px;
-      background-color: var(--col-primary);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px var(--col-shadow);
-      z-index: 200;
     }
 
     #mobile-legend-overlay {
@@ -360,10 +349,11 @@
   <div id="status-bar">
     <div id="status-highscore">最高分：<span id="highscore-value">0</span></div>
     <div id="status-next">下一個：<span id="next-text">－</span></div>
-    <button id="restart-btn">🔄</button>
+    <div id="status-buttons">
+      <button id="mobile-legend-btn">📋</button>
+      <button id="restart-btn">🔄</button>
+    </div>
   </div>
-
-  <button id="mobile-legend-btn">📋 等級</button>
   <div id="mobile-legend-overlay">
     <div id="mobile-legend-panel">
       <button id="mobile-legend-close">✕</button>

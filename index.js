@@ -316,27 +316,22 @@ const render = Render.create({
 });
 
 const menuStatics = [
+	// 背景圖
 	Bodies.rectangle(Game.width / 2, Game.height * 0.4, 512, 512, {
 		isStatic: true,
 		render: { sprite: { texture: './assets/img/bg-menu.png' } },
 	}),
 
-	// Add each fruit in a circle
-	...Array.apply(null, Array(Game.fruitSizes.length)).map((_, index) => {
-		const x = (Game.width / 2) + 192 * Math.cos((Math.PI * 2 * index)/12);
-		const y = (Game.height * 0.4) + 192 * Math.sin((Math.PI * 2 * index)/12);
-		const r = 64;
-
-		return Bodies.circle(x, y, r, {
-			isStatic: true,
-			render: {
-				sprite: {
-					texture: `./assets/img/circle${index}.png`,
-					xScale: r / 1024,
-					yScale: r / 1024,
-				},
+	// 第一個貓咪圖片（喵），放大並置中
+	Bodies.circle(Game.width / 2, Game.height * 0.4, 120, {
+		isStatic: true,
+		render: {
+			sprite: {
+				texture: './assets/img/circle0.png',
+				xScale: 120 / 512,
+				yScale: 120 / 512,
 			},
-		});
+		},
 	}),
 
 	Bodies.rectangle(Game.width / 2, Game.height * 0.75, 512, 96, {

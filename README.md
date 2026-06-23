@@ -91,4 +91,5 @@ npx live-server
 
 ## 📄 授權
 
-基於原專案 Unlicense 授權，本專案同樣採用 Unlicense 發布至公共領域。
+- 遊戲引擎程式碼（matter.js、index.js）：基於原專案 Unlicense 授權
+- 所有圖片（assets/img/*.png）：僅限本專案使用，未經繪師同意不得轉用

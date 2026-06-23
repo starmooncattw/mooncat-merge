@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone *)",
+      "Read(//tmp/**)",
+      "WebFetch(domain:raw.githubusercontent.com)"
+    ]
+  }
+}

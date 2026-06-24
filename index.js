@@ -410,7 +410,8 @@ Game.initGame();
 
 const resizeCanvas = () => {
 	const screenWidth = document.body.clientWidth;
-	const screenHeight = document.body.clientHeight;
+	const statusBar = document.getElementById('status-bar');
+	const screenHeight = document.body.clientHeight - (statusBar ? statusBar.offsetHeight : statusBarHeight);
 
 	let newWidth = Game.width;
 	let newHeight = Game.height;
